@@ -1,0 +1,72 @@
+page-profile {
+  .nav-btn {
+    display: grid;
+    grid-template-columns: auto auto 33% auto;
+  }
+  .main-logo{
+      width: 65%;
+  }
+  .toolbar-title{
+    text-align: center !important;
+  }
+  .main-btn{
+    background-color: #9a3056;
+    font-size: 14px;
+  }
+
+  .test_form {
+    label{
+      font-size: 14px;
+    }
+    input{
+      width: 100%;
+      border: 2px solid #9a3056;
+      background: transparent;
+      height: 40px;
+      margin-top: 10px;
+      padding: 5px;
+      font-size: 14px;
+    }
+    textarea {
+      width: 100%;
+      border: 2px solid #dee0e5;
+      background: transparent;
+      min-height: 100px;
+      padding: 5px;
+      border: 2px solid #9a3056;
+    }
+  }
+  .video-box {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 15px;
+
+    .inner-video {
+      border: 2px solid #9a3056;
+      img {
+        width: 100%;
+      }
+      h3 {
+        padding: 10px;
+        font-size: 16px;
+        margin: 0px;
+        text-align: center;
+      }
+    }
+  }
+
+  ion-footer{
+    ion-toolbar{
+      div{
+        background-color: #dee0e5!important;
+      }
+    }
+
+  }
+  .foot-btn {
+    background-color: #fcec34;
+    width: 90% !important;
+    color: #000;
+    margin: 0 auto;
+}
+}

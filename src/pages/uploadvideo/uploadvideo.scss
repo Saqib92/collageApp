@@ -1,0 +1,51 @@
+page-uploadvideo {
+
+	.main-logo{
+	    width: 65%;
+	}
+	.toolbar-title{
+		text-align: center !important;
+	}
+
+	.main-btn{
+		background-color: #9a3056;
+		font-size: 14px;
+	}
+
+	ion-footer{
+		ion-toolbar{
+			div{
+				background-color: #dee0e5!important;
+			}
+		}
+
+	}
+	.margin-auto {
+		margin: auto;
+	}
+	.video-box {
+		    border: 2px solid #9a3056;
+		img {
+			widht: 100%;
+		}
+		h3 {
+			padding: 10px;
+			margin: 0px;
+			text-align: center;
+			font-weight: 300;
+			font-size: 16px;
+		}
+	}
+	.foot-btn{
+	background-color: #fcec34;
+	width: 30%;
+	color: #000;
+	}
+
+	ion-item{
+		    background-color: transparent!important;
+	}
+
+	
+
+}

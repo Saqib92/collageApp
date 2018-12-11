@@ -1,0 +1,151 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><img src="assets/imgs/logo.png" class="main-logo"></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toHome()">
+        <ion-icon name="home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<div style="text-align: center;">
+		<ion-grid>
+			<ion-row class="nav-btn">
+				<ion-col class="active">
+					<button ion-button block class="main-btn">Profile</button>
+				</ion-col>
+				<ion-col>
+					<button ion-button block class="main-btn" (click)="toVideo()">Video</button>
+				</ion-col>
+				<ion-col >
+					<button ion-button block class="main-btn" (click)="toTestimonial()">Testimonial</button>
+				</ion-col>
+				<ion-col>
+					<button ion-button block class="main-btn" (click)="toHobbies()">Hobbies</button>
+				</ion-col>
+
+			</ion-row>
+		</ion-grid>
+
+		<h2>Profile Information</h2>
+
+
+	</div>
+	<div>
+		<ion-grid *ngIf="oldData != undefined">
+			<ion-row class="test_form">
+				<ion-col col-6>
+					<div class="form-group">
+						<label>
+							First Name
+						</label>
+						<input type="text" name="" class="form-control" [(ngModel)]="oldData.first_name">
+					</div>
+				</ion-col>
+				<ion-col col-6>
+					<div class="form-group">
+						<label>
+							Middle Name
+						</label>
+						<input type="text" name="" class="form-control" [(ngModel)]="oldData.middle_name">
+					</div>
+				</ion-col>
+				
+				<ion-col col-6>
+					<div class="form-group">
+						<label>
+							Last Name
+						</label>
+						<input type="text" name="" class="form-control" [(ngModel)]="oldData.last_name">
+					</div>
+				</ion-col>
+				<ion-col col-6>
+					<div class="form-group">
+						<label>
+							Suffix
+						</label>
+						<input type="text" name="" class="form-control" [(ngModel)]="oldData.suffix">
+					</div>
+				</ion-col>
+
+				<ion-col col-6>
+					<div class="form-group">
+						<label>
+							Phone
+						</label>
+						<input type="tel" name="" class="form-control" [(ngModel)]="oldData.contact_no">
+					</div>
+				</ion-col>
+				<ion-col col-6>
+					<div class="form-group">
+						<label>
+							Email
+						</label>
+						<input type="email" name="" class="form-control" [(ngModel)]="oldData.email" readonly="">
+					</div>
+				</ion-col>
+				<ion-col col-12>
+					<div class="form-group">
+						<label>
+							Address
+						</label>
+						<input type="text" name="" class="form-control" [(ngModel)]="oldData.full_address">
+					</div>
+				</ion-col>
+				<ion-col col-6>
+					<div class="form-group">
+						<label>
+							City
+						</label>
+						<input type="text" name="" class="form-control" [(ngModel)]="oldData.state">
+					</div>
+				</ion-col>
+				<ion-col col-6>
+					<div class="form-group">
+						<label>
+							State
+						</label>
+						<input type="text" name="" class="form-control" [(ngModel)]="oldData.state">
+					</div>
+				</ion-col>
+
+				<ion-col col-6>
+					<div class="form-group">
+						<label>
+							Zip Code
+						</label>
+						<input type="text" name="" class="form-control" [(ngModel)]="oldData.zip_code">
+					</div>
+				</ion-col>
+				<ion-col col-6>
+					<div class="form-group">
+						<label>
+							Country
+						</label>
+						<input type="text" name="" class="form-control" [(ngModel)]="oldData.country">
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+
+	</div>
+	
+</ion-content>
+
+
+<ion-footer>
+
+    <button ion-button block class="foot-btn" (click)="profileUpdate( oldData.first_name, oldData.middle_name, oldData.last_name, oldData.suffix, oldData.contact_no, oldData.full_address, oldData.state, oldData.zip_code, oldData.country)">Update</button>
+
+</ion-footer>

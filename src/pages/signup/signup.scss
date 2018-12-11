@@ -1,0 +1,33 @@
+page-signup {
+.main-logo{
+	    width: 65%;
+	}
+	.toolbar-title{
+		text-align: center !important;
+	}
+	.inputs-user{
+		margin-top: 30%;
+		text-align: center;
+		ion-icon{
+			color: #9b3057;
+			font-size: 25px;
+		}
+		ion-item{
+			width: 75%;
+		    margin-left: auto;
+		    margin-right: auto;
+		    border: 1px solid #fff;
+			background-color: transparent!important;
+			margin-bottom: 20px;
+			box-shadow: 1px 1px 1px #bbbec3;
+		}
+	}
+	.login-btn{
+		margin: 0 auto; width: 75%;background-color: #ffed35;color: black;
+	}
+	ion-navbar div{
+		
+			background: #fff!important;
+		
+	}
+}

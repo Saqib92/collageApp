@@ -38,7 +38,8 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  c_yellow:	  #fcec34,
 );
 
 
@@ -60,7 +61,27 @@ $colors: (
 // --------------------------------------------------
 // Windows only Sass variables can go here
 
-
+ion-content{
+		background-color: #dee0e5 !important;
+	}
+	.active button{
+		background: #fcec34 !important;
+		color: #000 !important;
+	}
+	button.button-default {
+		box-shadow: 0px 1px 2px -1px #000;
+	}
+  .nav-btn {
+    display: grid !important;
+    grid-template-columns: auto auto 33% auto;
+  }
+  .toolbar-content.toolbar-content-md {
+      display: grid;
+      grid-template-columns: auto auto auto;
+  }
+  .foot-btn {
+    width: auto !important;
+}
 
 
 // App Theme

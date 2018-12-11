@@ -1,0 +1,38 @@
+page-options {
+  .main-logo{
+	    width: 65%;
+	}
+	.toolbar-title{
+		text-align: center !important;
+	}
+	.main-btn{
+		background-color: #9a3056;
+		font-size: 14px;
+	}
+  .opt-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+  }
+  .opt-box {
+    border: 2px solid #9a3056;
+    text-align: center;
+    padding: 10px;
+  }
+  .opt-box img {
+
+  }
+  .opt-box h2{
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  .opt-box button{
+    width: 100%;
+  }
+
+  .foot-btn{
+	background-color: #fcec34;
+	width: 30%;
+	color: #000;
+	}
+}

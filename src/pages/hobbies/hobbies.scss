@@ -1,0 +1,49 @@
+page-hobbies {
+	.main-logo{
+	    width: 65%;
+	}
+	.toolbar-title{
+		text-align: center !important;
+	}
+	.main-btn{
+		background-color: #9a3056;
+		font-size: 14px;
+	}
+	.main-box {
+
+		padding: 10px;
+		border: 2px solid #9a3056;
+		margin-bottom: 15px;
+
+		img {
+			width: 100%;
+		}
+		.box-content {
+			h3 {
+				color: #333;
+				margin-bottom: 5px;
+			}
+			p{
+				font-size: 14px;
+				line-height: 18px;
+				margin-top: 5px;
+			}
+		}
+	}
+
+	ion-footer{
+		ion-toolbar{
+			div{
+				background-color: #dee0e5!important;
+			}
+		}
+
+	}
+	.foot-btn{
+	background-color: #fcec34;
+	width: 30%;
+	color: #000;
+	}
+
+	
+}

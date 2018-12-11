@@ -1,0 +1,97 @@
+<!--
+  Generated template for the OptionsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><img src="assets/imgs/logo.png" class="main-logo"></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<div style="text-align: center;">
+		<ion-grid>
+			<ion-row class="nav-btn">
+				<ion-col>
+					<button ion-button block class="main-btn" (click)="toProfile()">Profile</button>
+				</ion-col>
+				<ion-col>
+					<button ion-button block class="main-btn" (click)="toVideo()">Video</button>
+				</ion-col>
+				<ion-col>
+					<button ion-button block class="main-btn" (click)="toTestimonital()">Testimonial</button>
+				</ion-col>
+				<ion-col>
+					<button ion-button block class="main-btn" (click)="toHobbies()">Hobbies</button>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+    <h2>Select Template</h2>
+
+  </div>
+  <div>
+		<ion-grid>
+			<ion-row  class="opt-grid">
+				<ion-col class="opt-box">
+            <h2>Cork Board</h2>
+            <img src="https://via.placeholder.com/200x250.png" />
+            <button ion-button class="foot-btn">Save</button>
+        </ion-col>
+
+  				<ion-col class="opt-box">
+              <h2>Cork Board</h2>
+              <img src="https://via.placeholder.com/200x250.png" />
+              <button ion-button class="foot-btn">Save</button>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div>
+		<ion-grid>
+      <ion-list>
+
+      <ion-item>
+        <ion-label><b>Email:</b> john.doe@gmail.com</ion-label>
+        <ion-checkbox [(ngModel)]="pepperoni1"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label><b>Address:</b> 123 Address</ion-label>
+        <ion-checkbox [(ngModel)]="pepperoni2"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label><b>Phone:</b> (111) 111 111 111</ion-label>
+        <ion-checkbox [(ngModel)]="pepperoni3"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>www.facebook.com/john.doe</ion-label>
+        <ion-checkbox [(ngModel)]="pepperoni4"></ion-checkbox>
+      </ion-item>
+
+        <ion-item>
+          <ion-label>www.twitter.com/john.doe</ion-label>
+          <ion-checkbox [(ngModel)]="pepperoni5"></ion-checkbox>
+        </ion-item>
+
+      </ion-list>
+    </ion-grid>
+  </div>
+
+</ion-content>
+
+
+
+<ion-footer>
+  <ion-toolbar style="text-align: center;">
+    <button ion-button class="foot-btn">Select Template</button>
+    <button ion-button class="foot-btn">View Brochure</button>
+    <button ion-button class="foot-btn">Dashboard</button>
+  </ion-toolbar>
+</ion-footer>

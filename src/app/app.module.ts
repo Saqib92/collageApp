@@ -19,8 +19,10 @@ import { VideoPage } from '../pages/video/video';
 import { ProfilePage } from '../pages/profile/profile';
 import { UploadvideoPage } from '../pages/uploadvideo/uploadvideo';
 import { IonicStorageModule } from '@ionic/storage';
-import { MediaCapture} from '@ionic-native/media-capture';
-
+import { MediaCapture } from '@ionic-native/media-capture';
+import { Camera } from '@ionic-native/camera';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
 
 @NgModule({
   declarations: [
@@ -65,6 +67,9 @@ import { MediaCapture} from '@ionic-native/media-capture';
     StatusBar,
     SplashScreen,
     MediaCapture,
+    Camera,
+    FileTransfer,
+    File,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

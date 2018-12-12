@@ -18,14 +18,15 @@
 		
 
 
-		<h2>Receipt</h2>
+	<h2>Receipt</h2>
 	</div>
 	<div>
 		<ion-grid>
 			<ion-row>
 				<ion-col col-8 class="margin-auto">
 					<div class="video-box">
-						<img src="https://via.placeholder.com/400x250" />
+						<img *ngIf="playVideo == undefined" src="https://via.placeholder.com/400x250" />
+						<video *ngIf="playVideo != undefined" src="{{vidUrl + playVideo}}"  autobuffer autoloop loop controls></video>
 						<h3>Introduction Video</h3>
 					</div>
 				</ion-col>
@@ -51,7 +52,7 @@
 
 				</ion-col>
 				<ion-col col-12>
-					<button ion-button block (click)="uploadVideo(title, description)">Upload</button>
+					<button ion-button block (click)="addVideo(title, description)">Upload</button>
 				</ion-col>
 			</ion-row>
 		</ion-grid>

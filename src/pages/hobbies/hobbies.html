@@ -39,66 +39,32 @@
 	<div>
 		<details>
 			<summary>Add New Hobby <span class="drop"><ion-icon name="arrow-dropdown"></ion-icon></span></summary>
-			<p class="add-hoby">
-				<ion-icon name="camera"></ion-icon>
+			<p class="add-hoby" (click)="presentActionSheet()">
+				<ion-icon *ngIf="confirmName == undefined" name="camera"></ion-icon>
+				<img *ngIf="confirmName != undefined" src="{{imgUrl + confirmName}}" style="width: 120px; height: 120px;">
 			</p>
 			<ion-item>
 				<ion-label floating>Hobby</ion-label>
-				<ion-input type="text" ></ion-input>
+				<ion-input type="text" [(ngModel)]="name"></ion-input>
 			</ion-item>
 			<ion-item>
 				<ion-label floating>Description</ion-label>
-				<ion-input type="text" ></ion-input>
+				<ion-input type="text" [(ngModel)]="description"></ion-input>
 			</ion-item>
-				<button ion-button block color="c_yellow">Save</button>
+				<button ion-button block color="c_yellow" (click)="saveHobby(name, description)">Save</button>
 		</details>
 	</div>
+
 	<div >
 		<ion-grid>
-			<ion-row class="main-box">
+			<ion-row class="main-box" *ngFor="let hb of myHobbies">
 				<ion-col col-6>
-					<img src="https://via.placeholder.com/200x150" />
+					<img src="{{imgUrl + hb.video}}" style="width: 80px;" />
 				</ion-col>
 				<ion-col col-6>
 					<div class="box-content">
-						<h3 class="box-heading">Guitar Playing</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis mauris in urna interdum hendrerit. </p>
-					</div>
-				</ion-col>
-			</ion-row>
-
-			<ion-row class="main-box">
-				<ion-col col-6>
-					<img src="https://via.placeholder.com/200x150" />
-				</ion-col>
-				<ion-col col-6>
-					<div class="box-content">
-						<h3 class="box-heading">Guitar Playing</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis mauris in urna interdum hendrerit. </p>
-					</div>
-				</ion-col>
-			</ion-row>
-
-			<ion-row class="main-box">
-				<ion-col col-6>
-					<img src="https://via.placeholder.com/200x150" />
-				</ion-col>
-				<ion-col col-6>
-					<div class="box-content">
-						<h3 class="box-heading">Guitar Playing</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis mauris in urna interdum hendrerit. </p>
-					</div>
-				</ion-col>
-			</ion-row>
-
-			<ion-row class="main-box">
-				<ion-col col-6>
-					<img src="https://via.placeholder.com/200x150" />
-				</ion-col>
-				<ion-col col-6>
-					<div class="box-content">
-						<h3 class="box-heading">Guitar Playing</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis mauris in urna interdum hendrerit. </p>
+						<h3 class="box-heading">{{hb.title}}</h3>
+						<p>{{hb.description}}</p>
 					</div>
 				</ion-col>
 			</ion-row>

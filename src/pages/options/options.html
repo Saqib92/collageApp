@@ -37,37 +37,41 @@
   <div>
 		<ion-grid>
 			<ion-row  class="opt-grid">
-				<ion-col class="opt-box">
+				<ion-col class="opt-box" *ngFor="let tm of mydashboardData; let in = index;">
             <h2>Cork Board</h2>
-            <img src="https://via.placeholder.com/200x250.png" />
-            <button ion-button class="foot-btn">Save</button>
+              <img *ngIf="in == 0" src="assets/imgs/pdf1.jpeg">
+              <img *ngIf="in == 1" src="assets/imgs/pdf2.jpeg">
+              <p>
+                <ion-input type="text" placeholder="Enter Template Name" [(ngModel)]="tm.name"></ion-input>
+              </p>
+              <button ion-button class="foot-btn" (click)="selectTemp(tm.name, tm.id)">Select</button>
         </ion-col>
 
-  				<ion-col class="opt-box">
+  			<!-- 	<ion-col class="opt-box">
               <h2>Cork Board</h2>
               <img src="https://via.placeholder.com/200x250.png" />
               <button ion-button class="foot-btn">Save</button>
-          </ion-col>
+          </ion-col> -->
       </ion-row>
     </ion-grid>
   </div>
   <div>
-		<ion-grid>
+		<ion-grid *ngIf="oldData != undefined">
       <ion-list>
 
       <ion-item>
-        <ion-label><b>Email:</b> john.doe@gmail.com</ion-label>
-        <ion-checkbox [(ngModel)]="pepperoni1"></ion-checkbox>
+        <ion-label><b>Email:</b> {{oldData.email}}</ion-label>
+        <ion-checkbox [(ngModel)]="oldData.email"></ion-checkbox>
       </ion-item>
 
       <ion-item>
-        <ion-label><b>Address:</b> 123 Address</ion-label>
-        <ion-checkbox [(ngModel)]="pepperoni2"></ion-checkbox>
+        <ion-label><b>Address:</b> {{oldData.full_address}}</ion-label>
+        <ion-checkbox [(ngModel)]="oldData.full_address"></ion-checkbox>
       </ion-item>
 
       <ion-item>
-        <ion-label><b>Phone:</b> (111) 111 111 111</ion-label>
-        <ion-checkbox [(ngModel)]="pepperoni3"></ion-checkbox>
+        <ion-label><b>Phone:</b> {{oldData.contact_no}}</ion-label>
+        <ion-checkbox [(ngModel)]="oldData.contact_no"></ion-checkbox>
       </ion-item>
 
       <ion-item>
@@ -84,6 +88,9 @@
     </ion-grid>
   </div>
 
+<div style="text-align: center;">
+  <button ion-button class="foot-btn">SAVE</button>
+</div>
 </ion-content>
 
 

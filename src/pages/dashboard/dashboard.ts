@@ -42,7 +42,7 @@ export class DashboardPage {
     this.storage.get('userData').then((val)=>{
       this.oldData = val;
       console.log(val);
-      this.dashboardData();
+    //  this.dashboardData();
     })
   }
 

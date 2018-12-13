@@ -21,6 +21,9 @@ page-options {
   }
   .opt-box img {
 
+      height: 150px!important;
+      width: 85% !important;
+    
   }
   .opt-box h2{
     font-size: 16px;
@@ -40,4 +43,5 @@ page-options {
   ion-item{
         background: transparent!important;
   }
+
 }

@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HobbiesPage } from '../hobbies/hobbies';
 import { TestimonialPage } from '../testimonial/testimonial';
 import { VideoPage } from '../video/video';
+import { ProfilePage } from '../profile/profile';
 import { DashboardPage } from '../dashboard/dashboard';
 
 /**
@@ -36,10 +37,14 @@ export class OptionsPage {
   }
 
   toProfile() {
-    this.navCtrl.setRoot(DashboardPage)
+    this.navCtrl.setRoot(ProfilePage);
   }
   tooption() {
     this.navCtrl.setRoot(OptionsPage)
+  }
+
+  toDashboard(){
+    this.navCtrl.setRoot(DashboardPage)
   }
 
 }

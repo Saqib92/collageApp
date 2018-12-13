@@ -129,6 +129,7 @@ export class ProfilePage {
       		this.loader.dismiss();
       		this.storage.set("userData", data.data);
       		this.presentToast(data.message);
+          this.navCtrl.setRoot(DashboardPage);
       	} else {
       		this.loader.dismiss();
       		this.presentToast(data.message)

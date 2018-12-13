@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ToastController,LoadingController 
 import { HobbiesPage } from '../hobbies/hobbies';
 import { DashboardPage } from '../dashboard/dashboard';
 import { VideoPage } from '../video/video';
+import { ProfilePage } from '../profile/profile';
 import { OptionsPage } from '../options/options';
 
 import { Http } from '@angular/http';
@@ -28,7 +29,8 @@ userId:any;
 temReturnId:any;
 temSelectedId:any;
 headers:any;
-
+oldTestimonials:any;
+imgUrl:any;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -37,10 +39,12 @@ headers:any;
     public loadingCtrl: LoadingController,
     private storage: Storage
     ) {
+    this.imgUrl = globalData.imagesUrl;
 
     this.storage.get('userData').then((val)=>{
       console.log(val)
       this.userId = val.id;
+      this.getTestimonial(this.userId);
       console.log('user ID', this.userId);
     })
     this.storage.get('selectedReturnId').then((val2)=>{
@@ -81,7 +85,7 @@ headers:any;
   tohobbies() {
   	this.navCtrl.setRoot(HobbiesPage)
   }
-  toProfile() {
+  toDashboard(){
   	this.navCtrl.setRoot(DashboardPage)
   }
   toVideo() {
@@ -89,6 +93,27 @@ headers:any;
   }
   tooption() {
   	this.navCtrl.setRoot(OptionsPage)
+  }
+  toProfile(){
+    this.navCtrl.setRoot(ProfilePage);
+  }
+
+  getTestimonial(id){
+    this.presentLoadingDefault();
+    this.headers = {'Content-Type':'application/json'};
+      this.http.get(globalData.serviceUrl + 'testimonial/index/'+ id, {headers: this.headers})
+       .map(res => res.json())
+       .subscribe(data => {
+         console.log(data);
+       if(data.status ==true) {
+         this.oldTestimonials = data.data;
+         this.loader.dismiss();
+         this.presentToast(data.message);
+       } else {
+         this.loader.dismiss();
+         this.presentToast(data.message)
+       }
+    });
   }
 
 

@@ -4,6 +4,7 @@ import { HobbiesPage } from '../hobbies/hobbies';
 import { DashboardPage } from '../dashboard/dashboard';
 import { TestimonialPage } from '../testimonial/testimonial';
 import { OptionsPage } from '../options/options';
+import { ProfilePage } from '../profile/profile';
 import { UploadvideoPage } from '../uploadvideo/uploadvideo';
 
 /**
@@ -36,7 +37,7 @@ export class VideoPage {
   totestimonial() {
   	this.navCtrl.setRoot(TestimonialPage)
   }
-  toProfile() {
+  toDashboard() {
   	this.navCtrl.setRoot(DashboardPage);
   }
   tooption() {
@@ -44,6 +45,10 @@ export class VideoPage {
   }
   touploadvideo() {
     this.navCtrl.setRoot(UploadvideoPage)
+  }
+
+  toProfile(){
+    this.navCtrl.setRoot(ProfilePage);
   }
 
 

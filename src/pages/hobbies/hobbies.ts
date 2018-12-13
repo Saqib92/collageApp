@@ -260,4 +260,6 @@ myHobbies:any;
     this.navCtrl.setRoot(OptionsPage)
   }
 
+  
+
 }

@@ -63,8 +63,19 @@ export class LoginPage {
     
   }
 
-  login(useremail,password){
+  ValidateEmail(mail){
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)){
+      return (true)
+    }
+      this.presentToast("You have entered an invalid email address!")
+      return (false)
+  }
 
+  login(useremail,password){
+    let check = this.ValidateEmail(useremail);
+         if (check == false) {
+           return false;
+         }
 
     if(useremail == undefined || useremail == ''){
         this.presentToast("Please Enter Your Email")

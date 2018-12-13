@@ -56,6 +56,10 @@ temSelectedId:any;
     this.storage.get('selectedId').then((val3)=>{
       console.log(val3)
       this.temSelectedId = val3;
+      if(this.temSelectedId == null){
+        this.presentToast('Please Select Template First');
+        return false;
+      }
       console.log(this.temSelectedId)
     })
 
@@ -182,6 +186,10 @@ temSelectedId:any;
 
 saveVideo(t, d, f){
 
+if(this.temSelectedId == null){
+        this.presentToast('Please Select Template First');
+        return false;
+}
   let videoObj = {
     user_id: this.userId,
     template_id: this.temSelectedId,

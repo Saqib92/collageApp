@@ -44,7 +44,7 @@ export class VideoPage {
     this.navCtrl.setRoot(OptionsPage)
   }
   touploadvideo() {
-    this.navCtrl.setRoot(UploadvideoPage)
+    this.navCtrl.push(UploadvideoPage)
   }
 
   toProfile(){

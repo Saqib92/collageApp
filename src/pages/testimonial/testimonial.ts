@@ -116,16 +116,24 @@ imgUrl:any;
     });
   }
 
+  ValidateEmail(mail){
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)){
+      return (true)
+    }
+      this.presentToast("You have entered an invalid email address!")
+      return (false)
+  }
+
 
   storeTestimonial(name, email, comment){
     if (name == undefined || name == '') {
       this.presentToast('Please Enter Name');
       return false;
     }
-    if (email == undefined || email == '') {
-      this.presentToast('Please Enter Email');
-      return false;
-    }
+     let check = this.ValidateEmail(email);
+     if (check == false) {
+       return false;
+     }
     if (comment == undefined || comment == '') {
       this.presentToast('Please Enter Comment');
       return false;

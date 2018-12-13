@@ -24,7 +24,7 @@
 					<button ion-button block class="main-btn" (click)="toVideo()">Video</button>
 				</ion-col>
 				<ion-col>
-					<button ion-button block class="main-btn" (click)="toTestimonital()">Testimonial</button>
+					<button ion-button block class="main-btn" (click)="toTestimonital()">References</button>
 				</ion-col>
 				<ion-col class="active">
 					<button ion-button block class="main-btn">Hobbies</button>
@@ -33,11 +33,11 @@
 			</ion-row>
 		</ion-grid>
 
-		<h2>Hobbies & Interests</h2>
+		<h2>Livin’ My Best Life</h2>
 	</div>
 
 	<div>
-		<details>
+		<details style="border: 1px solid;">
 			<summary>Add New Hobby <span class="drop"><ion-icon name="arrow-dropdown"></ion-icon></span></summary>
 			<p class="add-hoby" (click)="presentActionSheet()">
 				<ion-icon *ngIf="confirmName == undefined" name="camera"></ion-icon>
@@ -51,7 +51,7 @@
 				<ion-label floating>Description</ion-label>
 				<ion-input type="text" [(ngModel)]="description"></ion-input>
 			</ion-item>
-				<button ion-button block color="c_yellow" (click)="saveHobby(name, description)">Save</button>
+				<button ion-button block color="c_yellow" (click)="saveHobby(name, description)" style="width: 80%;margin: 10px auto;">Save</button>
 		</details>
 	</div>
 
@@ -75,7 +75,7 @@
 </ion-content>
 <ion-footer>
   <ion-toolbar style="text-align: center;">
-    <button ion-button class="foot-btn" (click)="tooption()">Select Template</button>
+    <button ion-button class="foot-btn" (click)="tooption()">Choose e-Design</button>
     <button ion-button class="foot-btn">View Brochure</button>
     <button ion-button class="foot-btn" (click)="toDashboard()">Dashboard</button>
   </ion-toolbar>

@@ -44,7 +44,8 @@
               <p>
                 <ion-input type="text" placeholder="Enter Template Name" [(ngModel)]="tm.name"></ion-input>
               </p>
-              <button ion-button class="foot-btn" (click)="selectTemp(tm.name, tm.id)">Select</button>
+              <button ion-button class="foot-btn" *ngIf="selectedTemp.id != tm.id" (click)="selectTemp(tm.name, tm.id)">Select</button>
+              <button ion-button class="foot-btn" *ngIf="selectedTemp.id == tm.id" >Selected</button>
         </ion-col>
 
   			<!-- 	<ion-col class="opt-box">

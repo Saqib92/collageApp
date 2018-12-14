@@ -27,7 +27,17 @@ loader:any;
 headers:any;
 mydashboardData:any;
 oldData:any;
-selectedTemp = {};
+selectedTemp = {name:'', id: ''};
+email:boolean;
+address1:boolean;
+address2:boolean;
+myphone:boolean;
+fb:boolean;
+twitter:boolean;
+google:boolean;
+linkedin:boolean;
+pin:boolean;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -36,6 +46,17 @@ selectedTemp = {};
     public loadingCtrl: LoadingController,
     private storage: Storage
     ) {
+
+    this.email = true;
+    this.address1 = true;
+    this.address2 = true;
+    this.myphone = true;
+    this.fb = true;
+    this.twitter = true;
+    this.google = true;
+    this.linkedin = true;
+    this.pin = true;
+
     this.storage.get('userData').then((val)=>{
       console.log(val);
       this.oldData = val;
@@ -105,12 +126,98 @@ selectedTemp = {};
   }
 
   selectTemp(name, id){
-
-    this.selectedTemp.name = name;
-    this.selectedTemp.id = id;
+    if (name == undefined || name == '') {
+      this.presentToast('Please Enter Template Name');
+      return false;
+    }
+    else{
+      this.selectedTemp.name = name;  
+      this.selectedTemp.id = id;
+    }
+    
+    
     console.log(this.selectedTemp);
 
 
+  }
+
+  createTemplate(email, address, address2, myphone, fb, twitter, google, linkedin, pin){
+    if(this.selectedTemp.id == ''){
+      this.presentToast('Please Select Template');
+      return false;
+    } 
+
+/*
+    let createTempObj = {
+      user_id: this.oldData.id,
+      template_id: this.selectedTemp.id,
+      temp_name: this.selectedTemp.name
+    }*/
+    let createTempObj ={
+                    user_id: '',
+                    template_id: '',
+                    temp_name: '',
+                    email: '',
+                    address_1: '',
+                    address_2: '',
+                    phone_no: '',
+                    facebook: '',
+                    twitter: '',
+                    google_plus: '' ,
+                    linkedin: '',
+                    pintrest: ''
+};
+createTempObj.user_id = this.oldData.id;
+createTempObj.template_id = this.selectedTemp.id;
+createTempObj.temp_name = this.selectedTemp.name;
+
+  if (this.email == true) {
+     createTempObj.email= this.oldData.email
+  }
+  if (this.address1== true) {
+     createTempObj.address_1 = this.oldData.address
+  }
+  if (this.address2 == true) {
+     createTempObj.address_2 = this.oldData.address2
+  }
+  if (this.myphone == true) {
+     createTempObj.phone_no = this.oldData.contact_no
+  }
+  if (this.fb == true) {
+     createTempObj.facebook = this.oldData.fb
+  }
+  if (this.twitter == true) {
+     createTempObj.twitter = this.oldData.twitter
+  }
+  if (this.google == true) {
+     createTempObj.google_plus = this.oldData.google 
+  }
+  if (this.linkedin == true) {
+     createTempObj.linkedin = this.oldData.linkedin
+  }
+  if (this.pin == true) {
+     createTempObj.pintrest = this.oldData.pin
+  }
+
+
+console.log(createTempObj);
+    this.storage.set('selectedId', this.selectedTemp.id);
+
+    this.presentLoadingDefault();
+     this.headers = {'Content-Type':'application/json'};
+      this.http.post(globalData.serviceUrl + 'user_template/store', JSON.stringify(createTempObj), {headers: this.headers})
+       .map(res => res.json())
+       .subscribe(data => {
+         console.log(data);
+       if(data.status ==true) {
+         this.storage.set('selectedReturnId', data.data.id)
+         this.loader.dismiss();
+         this.presentToast(data.message);
+       } else {
+         this.loader.dismiss();
+         this.presentToast(data.message)
+       }
+      });
   }
 
 }

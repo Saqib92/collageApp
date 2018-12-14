@@ -61,35 +61,55 @@
 
       <ion-item>
         <ion-label><b>Email:</b> {{oldData.email}}</ion-label>
-        <ion-checkbox [(ngModel)]="oldData.email"></ion-checkbox>
+        <ion-checkbox [(ngModel)]="email"></ion-checkbox>
       </ion-item>
 
       <ion-item>
-        <ion-label><b>Address:</b> {{oldData.full_address}}</ion-label>
-        <ion-checkbox [(ngModel)]="oldData.full_address"></ion-checkbox>
+        <ion-label><b>Address 1:</b> {{oldData.full_address}}</ion-label>
+        <ion-checkbox [(ngModel)]="address1"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label><b>Address 2:</b> {{oldData.full_address}}</ion-label>
+        <ion-checkbox [(ngModel)]="address2"></ion-checkbox>
       </ion-item>
 
       <ion-item>
         <ion-label><b>Phone:</b> {{oldData.contact_no}}</ion-label>
-        <ion-checkbox [(ngModel)]="oldData.contact_no"></ion-checkbox>
+        <ion-checkbox [(ngModel)]="myphone"></ion-checkbox>
       </ion-item>
 
       <ion-item>
         <ion-label>www.facebook.com/john.doe</ion-label>
-        <ion-checkbox [(ngModel)]="pepperoni4"></ion-checkbox>
+        <ion-checkbox [(ngModel)]="fb"></ion-checkbox>
       </ion-item>
 
-        <ion-item>
-          <ion-label>www.twitter.com/john.doe</ion-label>
-          <ion-checkbox [(ngModel)]="pepperoni5"></ion-checkbox>
-        </ion-item>
+      <ion-item>
+        <ion-label>www.twitter.com/john.doe</ion-label>
+        <ion-checkbox [(ngModel)]="twitter"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>www.twitter.com/john.doe</ion-label>
+        <ion-checkbox [(ngModel)]="google"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>www.twitter.com/john.doe</ion-label>
+        <ion-checkbox [(ngModel)]="linkedin"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>www.twitter.com/john.doe</ion-label>
+        <ion-checkbox [(ngModel)]="pin"></ion-checkbox>
+      </ion-item>
 
       </ion-list>
     </ion-grid>
   </div>
 
 <div style="text-align: center;">
-  <button ion-button class="foot-btn">SAVE</button>
+  <button ion-button class="foot-btn" (click)="createTemplate(email, address1, myphone, fb, twitter, google, linkedin, pin)">SAVE</button>
 </div>
 </ion-content>
 

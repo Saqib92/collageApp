@@ -59,7 +59,7 @@ export class ProfilePage {
 
 	}
 
-  profileUpdate( first_name, middle_name, last_name, suffix, contact_no, full_address, state, zip_code, country, password, rpassword ) {
+  profileUpdateprofileUpdate(first_name, middle_name, last_name, suffix, contact_no, address_1, address_2, city,state,zip_code, country,facebok, twitter,google_plus, linkedin,pintrest) {
   	
   	if(first_name == undefined || first_name == ''){
         this.presentToast("Please Enter Your First Name")
@@ -82,7 +82,11 @@ export class ProfilePage {
         return false
     }
   
-  	if(full_address == undefined || full_address == ''){
+  	if(address_1 == undefined || address_1 == ''){
+        this.presentToast("Please Enter Your Address")
+        return false
+    }
+    if(address_2 == undefined || address_2 == ''){
         this.presentToast("Please Enter Your Address")
         return false
     }
@@ -98,25 +102,26 @@ export class ProfilePage {
         this.presentToast("Please Enter Your Country")
         return false
     }
-    if(password != rpassword) {
-        this.presentToast("Password Not Matched")
-       return false
-    }
+
 
     let profileObject = {
-  		first_name: first_name ,
-  		middle_name: middle_name,
-  		last_name: last_name,
-  		suffix: suffix,
-  		email: this.oldData.email,
-  		password: password,
-  		street: '',
-  		state: state,
-  		zip_code: zip_code,
-  		country:country ,
-  		contact_no: contact_no,
-  		role:'User',
-  		profile_pic:''
+        first_name : first_name ,
+        middle_name : middle_name ,
+        last_name : last_name ,
+        suffix : suffix ,
+        street : '' ,
+        state : state ,
+        zip_code : zip_code ,
+        country : country ,
+        contact_no : contact_no ,
+        role : 'User' ,
+        facebook : facebok ,
+        twitter : twitter ,
+        google_plus : google_plus ,
+        linkedin : linkedin ,
+        pintrest : pintrest ,
+        address_1 : address_1,
+        address_2 : address_2
     }
   	this.presentLoadingDefault();
 

@@ -100,7 +100,7 @@
 						<label>
 							Address 1
 						</label>
-						<input type="text" name="" class="form-control" [(ngModel)]="oldData.full_address">
+						<input type="text" name="" class="form-control" [(ngModel)]="oldData.address_1">
 					</div>
 				</ion-col>
 				<ion-col col-6>
@@ -108,7 +108,7 @@
 						<label>
 							Address 2
 						</label>
-						<input type="text" name="" class="form-control" [(ngModel)]="oldData.state">
+						<input type="text" name="" class="form-control" [(ngModel)]="oldData.address_2">
 					</div>
 				</ion-col>
 				<ion-col col-6>
@@ -116,7 +116,7 @@
 						<label>
 							City
 						</label>
-						<input type="text" name="" class="form-control" [(ngModel)]="oldData.state">
+						<input type="text" name="" class="form-control" [(ngModel)]="oldData.city">
 					</div>
 				</ion-col>
 				<ion-col col-6>
@@ -144,6 +144,50 @@
 						<input type="text" name="" class="form-control" [(ngModel)]="oldData.country">
 					</div>
 				</ion-col>
+
+				<ion-col col-6>
+					<div class="form-group">
+						<label>
+							Facebook
+						</label>
+						<input type="text" name="" class="form-control" [(ngModel)]="oldData.facebook">
+					</div>
+				</ion-col>
+
+				<ion-col col-6>
+					<div class="form-group">
+						<label>
+							Twitter
+						</label>
+						<input type="text" name="" class="form-control" [(ngModel)]="oldData.twitter">
+					</div>
+				</ion-col>
+
+				<ion-col col-6>
+					<div class="form-group">
+						<label>
+							Google+
+						</label>
+						<input type="text" name="" class="form-control" [(ngModel)]="oldData.google_plus">
+					</div>
+				</ion-col>
+				<ion-col col-6>
+					<div class="form-group">
+						<label>
+							Linkedin
+						</label>
+						<input type="text" name="" class="form-control" [(ngModel)]="oldData.linkedin">
+					</div>
+				</ion-col>
+
+				<ion-col col-6>
+					<div class="form-group">
+						<label>
+							Pintrest
+						</label>
+						<input type="text" name="" class="form-control" [(ngModel)]="oldData.pintrest">
+					</div>
+				</ion-col>
 			</ion-row>
 		</ion-grid>
 
@@ -154,6 +198,6 @@
 
 <ion-footer>
 
-    <button ion-button block class="foot-btn" (click)="profileUpdate( oldData.first_name, oldData.middle_name, oldData.last_name, oldData.suffix, oldData.contact_no, oldData.full_address, oldData.state, oldData.zip_code, oldData.country)">Update</button>
+    <button ion-button block class="foot-btn" (click)="profileUpdate(oldData.first_name, oldData.middle_name, oldData.last_name, oldData.suffix, oldData.contact_no, oldData.address_1, oldData.address_2, oldData.city, oldData.state, oldData.zip_code, oldData.country, oldData.facebok, oldData.twitter, oldData.google_plus, oldData.linkedin, oldData.pintrest)">Update</button>
 
 </ion-footer>

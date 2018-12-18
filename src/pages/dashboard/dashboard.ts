@@ -42,7 +42,7 @@ export class DashboardPage {
     this.storage.get('userData').then((val)=>{
       this.oldData = val;
       console.log(val);
-    //  this.dashboardData();
+      this.dashboardData(val.id);
     })
   }
 
@@ -84,10 +84,10 @@ export class DashboardPage {
     this.loader.present();
   }
 
-  dashboardData () {
+  dashboardData (id) {
      this.presentLoadingDefault();
      this.headers = {'Content-Type':'application/json'};
-      this.http.get(globalData.serviceUrl + 'templates/index', {headers: this.headers})
+      this.http.get(globalData.serviceUrl + 'user_template/index/'+id, {headers: this.headers})
        .map(res => res.json())
        .subscribe(data => {
          console.log(data);
@@ -102,35 +102,28 @@ export class DashboardPage {
 
   }
 
+  deleteMyTemplate(id){
+    console.log(id);
+    //this.presentLoadingDefault();
+     this.headers = {'Content-Type':'application/json'};
+      this.http.get(globalData.serviceUrl + 'user_template/delete/'+id, {headers: this.headers})
+       .map(res => res.json())
+       .subscribe(data => {
+         console.log(data);
+       if(data.status ==true) {
+         //this.loader.dismiss();
+         this.dashboardData(this.oldData.id);
+         this.presentToast(data.message);
+       } else {
+         //this.loader.dismiss();
+         this.presentToast(data.message)
+       }
+      });
+  }
+
   logout() {
     this.storage.clear();
     this.navCtrl.setRoot(LoginPage)
   }
 
-  createTemplate(name, id){
-
-    console.log(name, id);
-    let createTempObj = {
-      user_id: this.oldData.id,
-      template_id: id,
-      temp_name: name
-    }
-    this.storage.set('selectedId', id);
-    this.presentLoadingDefault();
-     this.headers = {'Content-Type':'application/json'};
-      this.http.post(globalData.serviceUrl + 'user_template/store', JSON.stringify(createTempObj), {headers: this.headers})
-       .map(res => res.json())
-       .subscribe(data => {
-         console.log(data);
-       if(data.status ==true) {
-         this.storage.set('selectedReturnId', data.data.id)
-         this.loader.dismiss();
-         this.presentToast(data.message);
-       } else {
-         this.loader.dismiss();
-         this.presentToast(data.message)
-       }
-      });
-
-  }
 }

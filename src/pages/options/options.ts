@@ -175,33 +175,34 @@ createTempObj.temp_name = this.selectedTemp.name;
      createTempObj.email= this.oldData.email
   }
   if (this.address1== true) {
-     createTempObj.address_1 = this.oldData.address
+     createTempObj.address_1 = this.oldData.address_1
   }
   if (this.address2 == true) {
-     createTempObj.address_2 = this.oldData.address2
+     createTempObj.address_2 = this.oldData.address_2
   }
   if (this.myphone == true) {
      createTempObj.phone_no = this.oldData.contact_no
   }
   if (this.fb == true) {
-     createTempObj.facebook = this.oldData.fb
+     createTempObj.facebook = this.oldData.facebook
   }
   if (this.twitter == true) {
      createTempObj.twitter = this.oldData.twitter
   }
   if (this.google == true) {
-     createTempObj.google_plus = this.oldData.google 
+     createTempObj.google_plus = this.oldData.google_plus
   }
   if (this.linkedin == true) {
      createTempObj.linkedin = this.oldData.linkedin
   }
   if (this.pin == true) {
-     createTempObj.pintrest = this.oldData.pin
+     createTempObj.pintrest = this.oldData.pintrest
   }
 
 
 console.log(createTempObj);
     this.storage.set('selectedId', this.selectedTemp.id);
+    globalData.selectedId = this.selectedTemp.id;
 
     this.presentLoadingDefault();
      this.headers = {'Content-Type':'application/json'};
@@ -210,7 +211,8 @@ console.log(createTempObj);
        .subscribe(data => {
          console.log(data);
        if(data.status ==true) {
-         this.storage.set('selectedReturnId', data.data.id)
+         this.storage.set('selectedReturnId', data.data.id);
+         globalData.selectedReturnId = data.data.id;
          this.loader.dismiss();
          this.presentToast(data.message);
        } else {

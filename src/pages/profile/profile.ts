@@ -59,7 +59,7 @@ export class ProfilePage {
 
 	}
 
-  profileUpdateprofileUpdate(first_name, middle_name, last_name, suffix, contact_no, address_1, address_2, city,state,zip_code, country,facebok, twitter,google_plus, linkedin,pintrest) {
+  profileUpdate(first_name, middle_name, last_name, suffix, contact_no, address_1, address_2, city,state,zip_code, country,facebook, twitter,google_plus, linkedin,pintrest) {
   	
   	if(first_name == undefined || first_name == ''){
         this.presentToast("Please Enter Your First Name")
@@ -90,6 +90,10 @@ export class ProfilePage {
         this.presentToast("Please Enter Your Address")
         return false
     }
+    if(city == undefined || city == ''){
+        this.presentToast("Please Enter Your City")
+        return false
+    }
   	if(state == undefined || state == ''){
         this.presentToast("Please Enter Your Address")
         return false
@@ -115,13 +119,14 @@ export class ProfilePage {
         country : country ,
         contact_no : contact_no ,
         role : 'User' ,
-        facebook : facebok ,
+        facebook : facebook ,
         twitter : twitter ,
         google_plus : google_plus ,
         linkedin : linkedin ,
         pintrest : pintrest ,
         address_1 : address_1,
-        address_2 : address_2
+        address_2 : address_2,
+        city: city
     }
   	this.presentLoadingDefault();
 
@@ -150,7 +155,7 @@ toHome(){
 toHobbies() {
     this.navCtrl.setRoot(HobbiesPage)
   }
-  toTestimonital() {
+  toTestimonial() {
     this.navCtrl.setRoot(TestimonialPage)
   }
   toVideo() {

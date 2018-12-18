@@ -48,14 +48,14 @@
 			<ion-row>
 				<ion-col col-6 *ngFor="let tm of mydashboardData; let in = index;">
 					<div class="select-box">
-						<img *ngIf="in == 0" src="assets/imgs/pdf1.jpeg">
-						<img *ngIf="in == 1" src="assets/imgs/pdf2.jpeg">
+						<img *ngIf="tm.template_id == 1" src="assets/imgs/pdf1.jpeg">
+						<img *ngIf="tm.template_id == 2" src="assets/imgs/pdf2.jpeg">
 						<p>
-							<ion-input type="text" placeholder="Enter Template Name" [(ngModel)]="tm.name"></ion-input>
+							<ion-input type="text" placeholder="Enter Template Name" [(ngModel)]="tm.temp_name"></ion-input>
 						</p>
 						<p>
-							<span class="span-add"><ion-icon name="checkmark" class="add-icon" (click)="createTemplate(tm.name, tm.id)"></ion-icon></span>
-							<span class="span-close"><ion-icon name="close" class="close-icon"></ion-icon></span>
+							<span class="span-add"><ion-icon name="checkmark" class="add-icon"></ion-icon></span>
+							<span class="span-close"><ion-icon name="close" class="close-icon" (click)="deleteMyTemplate(tm.id)"></ion-icon></span>
 						</p>
 					</div>
 				</ion-col>

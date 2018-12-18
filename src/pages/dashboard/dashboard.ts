@@ -30,6 +30,7 @@ export class DashboardPage {
   headers: any;
   loader: any;
   mydashboardData: any;
+  selectedTemp = {id:''};
 
   constructor(
     public navCtrl: NavController, 
@@ -119,6 +120,15 @@ export class DashboardPage {
          this.presentToast(data.message)
        }
       });
+  }
+
+  selectTemp(id){
+    this.selectedTemp.id =  id;
+    console.log(id);
+  }
+  deSelectTemp(){
+    this.selectedTemp.id = '';
+    console.log('delecect')
   }
 
   logout() {

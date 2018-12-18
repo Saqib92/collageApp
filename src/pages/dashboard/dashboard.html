@@ -55,7 +55,7 @@
 						</p>
 						<p>
 							<span class="span-add">
-								<ion-icon name="checkmark" *ngIf="selectedTemp.id != tm.id" class="add-icon" (click)="selectTemp(tm.id)"></ion-icon>
+								<ion-icon name="checkmark" *ngIf="selectedTemp.id != tm.id" class="add-icon" (click)="selectTemp(tm.id, tm.template_id)"></ion-icon>
 								<ion-icon name="close" *ngIf="selectedTemp.id == tm.id" class="add-icon" (click)="deSelectTemp()"></ion-icon>
 							</span>
 							<span class="span-close"><ion-icon name="close" class="close-icon" (click)="deleteMyTemplate(tm.id)"></ion-icon></span>

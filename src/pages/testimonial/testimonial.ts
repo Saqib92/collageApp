@@ -47,7 +47,10 @@ imgUrl:any;
       this.getTestimonial(this.userId);
       console.log('user ID', this.userId);
     })
-    this.storage.get('selectedReturnId').then((val2)=>{
+
+    this.temSelectedId = globalData.selectedId;
+    this.temReturnId = globalData.selectedReturnId;
+    /*this.storage.get('selectedReturnId').then((val2)=>{
       console.log(val2)
       this.temReturnId = val2;
       console.log(this.temReturnId)
@@ -56,7 +59,7 @@ imgUrl:any;
       console.log(val3)
       this.temSelectedId = val3;
       console.log(this.temSelectedId)
-    })
+    })*/
   }
 
   ionViewDidLoad() {
@@ -126,6 +129,13 @@ imgUrl:any;
 
 
   storeTestimonial(name, email, comment){
+
+  if (this.temReturnId == undefined || this.temReturnId == '') {
+      this.presentToast('Please Select Template First');
+      this.toDashboard();
+      return false;
+    }    
+
     if (name == undefined || name == '') {
       this.presentToast('Please Enter Name');
       return false;

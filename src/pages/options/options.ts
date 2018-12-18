@@ -201,7 +201,7 @@ createTempObj.temp_name = this.selectedTemp.name;
 
 
 console.log(createTempObj);
-    this.storage.set('selectedId', this.selectedTemp.id);
+    //this.storage.set('selectedId', this.selectedTemp.id);
     globalData.selectedId = this.selectedTemp.id;
 
     this.presentLoadingDefault();
@@ -211,9 +211,10 @@ console.log(createTempObj);
        .subscribe(data => {
          console.log(data);
        if(data.status ==true) {
-         this.storage.set('selectedReturnId', data.data.id);
+         //this.storage.set('selectedReturnId', data.data.id);
          globalData.selectedReturnId = data.data.id;
          this.loader.dismiss();
+         this.navCtrl.push(TestimonialPage);
          this.presentToast(data.message);
        } else {
          this.loader.dismiss();

@@ -243,6 +243,26 @@ myHobbies:any;
 
   }
 
+  deleteHobby(id){
+    console.log(id);
+    this.presentLoadingDefault();
+    this.headers = {'Content-Type':'application/json'};
+    this.http.get(globalData.serviceUrl + 'hobbies/delete/'+id, {headers: this.headers})
+     .map(res => res.json())
+     .subscribe(data => {
+       console.log(data);
+     if(data.status ==true) {
+       this.loader.dismiss();
+       this.getUserhoby(this.userId);
+       this.presentToast(data.message)
+      
+     } else {
+       this.loader.dismiss();
+       this.presentToast(data.message)
+     }
+    });
+  }
+
 
   toTestimonital() {
   	this.navCtrl.setRoot(TestimonialPage)

@@ -122,13 +122,18 @@ export class DashboardPage {
       });
   }
 
-  selectTemp(id){
+  selectTemp(id, sId){
     this.selectedTemp.id =  id;
+    globalData.selectedReturnId = id;
+    globalData.selectedId = sId;
     console.log(id);
   }
   deSelectTemp(){
     this.selectedTemp.id = '';
     console.log('delecect')
+    globalData.selectedReturnId = ''
+    ;
+    globalData.selectedId = '';
   }
 
   logout() {

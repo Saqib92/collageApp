@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DashboardPage } from '../dashboard/dashboard';
 import { IonicPage, NavController, NavParams, ToastController, LoadingController, ActionSheetController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -48,7 +49,15 @@ temSelectedId:any;
       this.userId = val.id;
       console.log('user ID', this.userId);
     })
-    this.storage.get('selectedReturnId').then((val2)=>{
+    if (globalData.selectedId == '') {
+      this.presentToast('Please Select Template from Dashboard');
+      this.navCtrl.setRoot(DashboardPage);
+    }
+    else{
+      this.temSelectedId = globalData.selectedId;
+      this.temReturnId = globalData.selectedReturnId;
+    }
+    /*this.storage.get('selectedReturnId').then((val2)=>{
       console.log(val2)
       this.temReturnId = val2;
       console.log(this.temReturnId)
@@ -61,7 +70,7 @@ temSelectedId:any;
         return false;
       }
       console.log(this.temSelectedId)
-    })
+    })*/
 
   }
 
@@ -172,10 +181,11 @@ temSelectedId:any;
       if (res.status == true) {
           this.confirmName = res.data;
           this.playVideo = res.data;
+          this.loader.dismiss();
           this.saveVideo(t, d, this.confirmName);
           console.log('returened Video name: ' +this.confirmName);
       }
-      this.loader.dismiss();
+      //this.loader.dismiss();
       
     }, (err) => {
       console.log(err);

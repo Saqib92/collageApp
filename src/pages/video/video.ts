@@ -51,7 +51,5 @@ export class VideoPage {
     this.navCtrl.setRoot(ProfilePage);
   }
 
-
-
   
 }

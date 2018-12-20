@@ -77,7 +77,14 @@
 						<img *ngIf="tm.template_id == 1" src="assets/imgs/pdf1.jpeg">
 						<img *ngIf="tm.template_id == 2" src="assets/imgs/pdf2.jpeg">
 						<p>
-							{{tm.name}}
+							{{tm.temp_name}}
+						</p>
+						<p>
+							<span class="span-add">
+								<ion-icon name="checkmark" *ngIf="selectedTemp.id != tm.id" class="add-icon" (click)="selectTemp(tm.id, tm.template_id)"></ion-icon>
+								<ion-icon name="close" *ngIf="selectedTemp.id == tm.id" class="add-icon" (click)="deSelectTemp()"></ion-icon>
+							</span>
+							<!-- <span class="span-close"><ion-icon name="close" class="close-icon" (click)="deleteMyTemplate(tm.id)"></ion-icon></span> -->
 						</p>
 					</div>
 				</ion-col>

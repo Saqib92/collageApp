@@ -26,7 +26,7 @@
 				<ion-col col-8 class="margin-auto">
 					<div class="video-box">
 						<img *ngIf="playVideo == undefined" src="https://via.placeholder.com/400x250" />
-						<video *ngIf="playVideo != undefined" src="{{vidUrl + playVideo}}"  autobuffer autoloop loop controls></video>
+						<video *ngIf="playVideo != undefined" src="{{vidUrl + playVideo}}"  autobuffer autoloop loop controls style="width: 100%; height: 200px;"></video>
 						<h3>Introduction Video</h3>
 					</div>
 				</ion-col>

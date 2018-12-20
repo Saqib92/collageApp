@@ -31,6 +31,7 @@ temSelectedId:any;
 headers:any;
 oldTestimonials:any;
 imgUrl:any;
+selectedTemp = {id:'', rid:''};
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -48,9 +49,9 @@ imgUrl:any;
       console.log('user ID', this.userId);
     })
 
-    this.temSelectedId = globalData.selectedId;
+   /* this.temSelectedId = globalData.selectedId;
     this.temReturnId = globalData.selectedReturnId;
-    /*this.storage.get('selectedReturnId').then((val2)=>{
+    this.storage.get('selectedReturnId').then((val2)=>{
       console.log(val2)
       this.temReturnId = val2;
       console.log(this.temReturnId)
@@ -104,7 +105,7 @@ imgUrl:any;
   getTestimonial(id){
     this.presentLoadingDefault();
     this.headers = {'Content-Type':'application/json'};
-      this.http.get(globalData.serviceUrl + 'testimonial/index/'+ id, {headers: this.headers})
+      this.http.get(globalData.serviceUrl + 'user_template/index/'+ id, {headers: this.headers})
        .map(res => res.json())
        .subscribe(data => {
          console.log(data);
@@ -129,13 +130,6 @@ imgUrl:any;
 
 
   storeTestimonial(name, email, comment){
-
-  if (this.temReturnId == undefined || this.temReturnId == '') {
-      this.presentToast('Please Select Template First');
-      this.toDashboard();
-      return false;
-    }    
-
     if (name == undefined || name == '') {
       this.presentToast('Please Enter Name');
       return false;
@@ -148,11 +142,16 @@ imgUrl:any;
       this.presentToast('Please Enter Comment');
       return false;
     }
+      if (this.selectedTemp.id == "") {
+      this.presentToast('Please Select Template First');
+     // this.toDashboard();
+      return false;
+    }  
 
     let testObj = {
       user_id: this.userId,
-      template_id: this.temSelectedId,
-      user_template_id: this.temReturnId,
+      template_id: this.selectedTemp.rid,
+      user_template_id: this.selectedTemp.id,
       name: name,
       email: email,
       description: comment
@@ -173,6 +172,22 @@ imgUrl:any;
        }
       });
 
+  }
+
+  selectTemp(id, sId){
+    this.selectedTemp.id =  id;
+    this.selectedTemp.rid = sId;
+    // globalData.selectedReturnId = id;
+    // globalData.selectedId = sId;
+    console.log(id, sId);
+  }
+  deSelectTemp(){
+    this.selectedTemp.id = '';
+    this.selectedTemp.rid = '';
+    console.log('delecect')
+    // globalData.selectedReturnId = ''
+    // ;
+    // globalData.selectedId = '';
   }
 
 }

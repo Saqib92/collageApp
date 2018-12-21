@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title><img src="assets/imgs/logo.png" class="main-logo"></ion-title>
+    <ion-title *ngIf="imgUrl != undefined"><img src="{{imgUrl}}" class="main-logo"></ion-title>
   </ion-navbar>
 
 </ion-header>

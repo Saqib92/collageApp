@@ -3,4 +3,5 @@ export class globalData{
 	public static imagesUrl = "http://college.ummercial.com/public/app/images/";
 	public static selectedId = '';
 	public static selectedReturnId = '';
+	public static logo:any;
 }

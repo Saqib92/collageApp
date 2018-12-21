@@ -26,6 +26,7 @@ export class TestimonialPage {
 loader:any;
 header:any;
 userId:any;
+logo:any;
 temReturnId:any;
 temSelectedId:any;
 headers:any;
@@ -41,7 +42,7 @@ selectedTemp = {id:'', rid:''};
     private storage: Storage
     ) {
     this.imgUrl = globalData.imagesUrl;
-
+    this.logo = globalData.imagesUrl + globalData.logo;
     this.storage.get('userData').then((val)=>{
       console.log(val)
       this.userId = val.id;

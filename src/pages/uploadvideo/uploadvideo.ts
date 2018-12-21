@@ -30,6 +30,7 @@ vidUrl:any;
 userId:any;
 temReturnId:any;
 temSelectedId:any;
+logo:any;
   constructor(
   	public navCtrl: NavController,
   	public navParams: NavParams,
@@ -43,6 +44,7 @@ temSelectedId:any;
     private transfer: FileTransfer,
     private file: File
     ) {
+    this.logo = globalData.imagesUrl + globalData.logo;
     this.vidUrl = globalData.imagesUrl;
     this.storage.get('userData').then((val)=>{
       console.log(val)

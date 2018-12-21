@@ -31,7 +31,7 @@ export class DashboardPage {
   loader: any;
   mydashboardData: any;
   selectedTemp = {id:''};
-
+  logo:any;
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -40,6 +40,7 @@ export class DashboardPage {
     public loadingCtrl: LoadingController,
     private storage: Storage
     ) {
+    this.logo = globalData.imagesUrl + globalData.logo;
     this.storage.get('userData').then((val)=>{
       this.oldData = val;
       console.log(val);

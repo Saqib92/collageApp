@@ -21,7 +21,7 @@ export class SignupPage {
   singupData: any
   headers: any
   loader: any
-
+  logo:any;
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -29,6 +29,7 @@ export class SignupPage {
     private toastCtrl: ToastController,
     public loadingCtrl: LoadingController
   ) {
+    this.logo = globalData.imagesUrl + globalData.logo;
   }
 
   ionViewDidLoad() {

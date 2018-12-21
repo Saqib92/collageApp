@@ -27,6 +27,7 @@ loader:any;
 headers:any;
 myVids:any;
 vidUrl:any;
+logo:any;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -35,6 +36,7 @@ vidUrl:any;
     public loadingCtrl: LoadingController,
     private storage: Storage
     )  {
+    this.logo = globalData.imagesUrl + globalData.logo;
     this.vidUrl = globalData.imagesUrl;
     this.storage.get('userData').then((val)=>{
       this.getVideos(val.id);

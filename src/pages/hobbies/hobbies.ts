@@ -32,6 +32,7 @@ imgUrl:any;
 userId:any;
 headers:any;
 myHobbies:any;
+logo:any;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -46,7 +47,7 @@ myHobbies:any;
     ) {
 
     this.imgUrl = globalData.imagesUrl;
-
+    this.logo = globalData.imagesUrl + globalData.logo;
     this.storage.get('userData').then((val)=>{
       this.userId = val.id;
       this.getUserhoby(this.userId);

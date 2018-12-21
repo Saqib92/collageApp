@@ -37,7 +37,7 @@ twitter:boolean;
 google:boolean;
 linkedin:boolean;
 pin:boolean;
-
+logo:any;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -46,6 +46,7 @@ pin:boolean;
     public loadingCtrl: LoadingController,
     private storage: Storage
     ) {
+    this.logo = globalData.imagesUrl + globalData.logo;
 
     this.email = true;
     this.address1 = true;

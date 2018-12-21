@@ -26,7 +26,7 @@ export class LoginPage {
   loginData: any
   headers: any
   loader: any
-
+  imgUrl :any;
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -34,10 +34,9 @@ export class LoginPage {
     private toastCtrl: ToastController,
     public loadingCtrl: LoadingController,
     private storage: Storage
-  ) 
-  {
-    
-  
+  ){
+    this.getImg();    
+    console.log(this.imgUrl);  
   }
 
   ionViewDidLoad() {
@@ -61,6 +60,18 @@ export class LoginPage {
 
     this.loader.present();
     
+  }
+  getImg(){
+    this.headers = {'Content-Type':'application/json'};
+      this.http.get(globalData.serviceUrl + 'api_index', {headers: this.headers})
+       .map(res => res.json())
+       .subscribe(data => {
+         console.log(data);
+       if(data.status ==true) {
+         globalData.logo = data.data.site_logo;
+         this.imgUrl = globalData.imagesUrl + globalData.logo;
+       }
+      });
   }
 
   ValidateEmail(mail){

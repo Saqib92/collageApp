@@ -44,26 +44,21 @@
 	</div>
 	<div>
 		<ion-grid>
-			<ion-row>
+			<ion-row *ngIf="myVids != undefined">
 				<ion-col col-12>
 					<div class="video-box">
-						<img src="https://via.placeholder.com/400x250" />
-						<h3>Introduction Video</h3>
+						<video src="{{vidUrl + myVids[0].video}}"  autobuffer controls style="width: 100%;"></video>
+						<h3>{{myVids[0].title}}</h3>
 					</div>
 				</ion-col>
 
-				<ion-col col-6>
+				<ion-col col-6  *ngFor="let vid of myVids | slice:1">
 					<div class="video-box">
-						<img src="https://via.placeholder.com/400x250" />
-						<h3>Introduction Video</h3>
+						<video src="{{vidUrl + vid.video}}" autobuffer controls style="width: 100%;"></video>
+						<h3>{{vid.title}}</h3>
 					</div>
 				</ion-col>
-				<ion-col col-6>
-					<div class="video-box">
-						<img src="https://via.placeholder.com/400x250" />
-						<h3>Introduction Video</h3>
-					</div>
-				</ion-col>
+
 			</ion-row>
 		</ion-grid>
 	</div>

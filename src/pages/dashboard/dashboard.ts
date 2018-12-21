@@ -41,6 +41,7 @@ export class DashboardPage {
     private storage: Storage
     ) {
     this.logo = globalData.imagesUrl + globalData.logo;
+    this.getImg();
     this.storage.get('userData').then((val)=>{
       this.oldData = val;
       console.log(val);
@@ -66,6 +67,19 @@ export class DashboardPage {
   }
   toProfile() {
     this.navCtrl.setRoot(ProfilePage)
+  }
+
+  getImg(){
+    this.headers = {'Content-Type':'application/json'};
+      this.http.get(globalData.serviceUrl + 'api_index', {headers: this.headers})
+       .map(res => res.json())
+       .subscribe(data => {
+         console.log(data);
+       if(data.status ==true) {
+         globalData.logo = data.data.site_logo;
+         this.logo = globalData.imagesUrl + globalData.logo;
+       }
+      });
   }
 
   presentToast(message) {

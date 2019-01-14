@@ -64,10 +64,10 @@ export class SignupPage {
         this.presentToast("Please Enter Your First Name")
         return false
     }
-    if(mname == undefined || mname == ''){
+    /*if(mname == undefined || mname == ''){
         this.presentToast("Please Enter Your Middle Name")
         return false
-    }
+    }*/
     if(lname == undefined || lname == ''){
         this.presentToast("Please Enter Your Last Name")
         return false
@@ -93,13 +93,13 @@ export class SignupPage {
       first_name:fname,
       middle_name:mname,
       last_name:lname,
-      suffix:'xyz',
+      suffix:'',
       email:email,
       password:password,
-      street:"xyz",
-      state:"xyz",
-      zip_code:"xyz",
-      country:"xyz",
+      street:"",
+      state:"",
+      zip_code:"",
+      country:"",
       contact_no:"",
       role:"User",
       profile_pic: ""

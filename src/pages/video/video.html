@@ -44,7 +44,7 @@
 	</div>
 	<div>
 		<ion-grid>
-			<ion-row *ngIf="myVids != undefined">
+			<ion-row *ngIf="myVids.length > 0">
 				<ion-col col-12>
 					<div class="video-box">
 						<video src="{{vidUrl + myVids[0].video}}"  autobuffer controls style="width: 100%;"></video>

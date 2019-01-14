@@ -58,7 +58,9 @@
 								<ion-icon name="checkmark" *ngIf="selectedTemp.id != tm.id" class="add-icon" (click)="selectTemp(tm.id, tm.template_id)"></ion-icon>
 								<ion-icon name="close" *ngIf="selectedTemp.id == tm.id" class="add-icon" (click)="deSelectTemp()"></ion-icon>
 							</span>
-							<span class="span-close"><ion-icon name="close" class="close-icon" (click)="deleteMyTemplate(tm.id)"></ion-icon></span>
+							<span class="span-close">
+								<ion-icon name="close" class="close-icon" (click)="deleteMyTemplate(tm.id)"></ion-icon>
+							</span>
 						</p>
 					</div>
 				</ion-col>
@@ -80,7 +82,7 @@
 
 <ion-footer>
   <ion-toolbar style="text-align: center;">
-    <button ion-button class="foot-btn" (click)="toOption()">Choose e-Design</button>
-    <button ion-button class="foot-btn">e-Design</button>
+    <button ion-button class="foot-btn" (click)="toOption()">Choose eDesign</button>
+    <button ion-button class="foot-btn">eDesign</button>
   </ion-toolbar>
 </ion-footer>

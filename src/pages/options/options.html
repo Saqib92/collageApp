@@ -31,21 +31,22 @@
 				</ion-col>
 			</ion-row>
 		</ion-grid>
-    <h2>Select Template</h2>
+    <h2>Select eDesign</h2>
 
   </div>
   <div>
 		<ion-grid>
 			<ion-row  class="opt-grid">
 				<ion-col class="opt-box" *ngFor="let tm of mydashboardData; let in = index;">
-            <h2>Cork Board</h2>
+            <h2></h2>
               <img *ngIf="in == 0" src="assets/imgs/pdf1.jpeg">
               <img *ngIf="in == 1" src="assets/imgs/pdf2.jpeg">
               <p>
+                <ion-label stacked>Template Name</ion-label>
                 <ion-input type="text" placeholder="Enter Template Name" [(ngModel)]="tm.name"></ion-input>
               </p>
               <button ion-button class="foot-btn" *ngIf="selectedTemp.id != tm.id" (click)="selectTemp(tm.name, tm.id)">Select</button>
-              <button ion-button class="foot-btn" *ngIf="selectedTemp.id == tm.id" >Selected</button>
+              <button ion-button class="foot-btn" *ngIf="selectedTemp.id == tm.id" (click)="deselectTemp()">Selected</button>
         </ion-col>
 
   			<!-- 	<ion-col class="opt-box">

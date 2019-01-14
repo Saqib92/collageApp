@@ -36,6 +36,7 @@ logo:any;
     public loadingCtrl: LoadingController,
     private storage: Storage
     )  {
+    this.myVids = [];
     this.logo = globalData.imagesUrl + globalData.logo;
     this.vidUrl = globalData.imagesUrl;
     this.storage.get('userData').then((val)=>{

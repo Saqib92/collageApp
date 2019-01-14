@@ -42,10 +42,11 @@
               <img *ngIf="in == 0" src="assets/imgs/pdf1.jpeg">
               <img *ngIf="in == 1" src="assets/imgs/pdf2.jpeg">
               <p>
+                <ion-label stacked>Template Name</ion-label>
                 <ion-input type="text" placeholder="Enter Template Name" [(ngModel)]="tm.name"></ion-input>
               </p>
               <button ion-button class="foot-btn" *ngIf="selectedTemp.id != tm.id" (click)="selectTemp(tm.name, tm.id)">Select</button>
-              <button ion-button class="foot-btn" *ngIf="selectedTemp.id == tm.id" >Selected</button>
+              <button ion-button class="foot-btn" *ngIf="selectedTemp.id == tm.id" (click)="deselectTemp()">Selected</button>
         </ion-col>
 
   			<!-- 	<ion-col class="opt-box">

@@ -126,6 +126,11 @@ logo:any;
 
   }
 
+  deselectTemp(){
+    this.selectedTemp.id = '';
+    this.selectedTemp.name = '';
+  }
+
   selectTemp(name, id){
     if (name == undefined || name == '') {
       this.presentToast('Please Enter Template Name');

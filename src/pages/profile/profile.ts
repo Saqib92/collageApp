@@ -66,18 +66,18 @@ export class ProfilePage {
         this.presentToast("Please Enter Your First Name")
         return false
     }
-  	if(middle_name == undefined || middle_name == ''){
+  	/*if(middle_name == undefined || middle_name == ''){
         this.presentToast("Please Enter Your Middle Name")
         return false
-    }
+    }*/
   	if(last_name == undefined || last_name == ''){
         this.presentToast("Please Enter Your Last Name")
         return false
     }
-  	if(suffix == undefined || suffix == ''){
+  	/*if(suffix == undefined || suffix == ''){
         this.presentToast("Please Enter SUffix")
         return false
-    }
+    }*/
   	if(contact_no == undefined || contact_no == ''){
         this.presentToast("Please Enter Your Contact Number")
         return false
